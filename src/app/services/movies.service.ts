@@ -11,8 +11,8 @@ import { catchError, retry } from 'rxjs/operators';
 export class MovieService {
 
   constructor(private http: HttpClient) { }
-  apiKey: '6555c83772dd44d8d1be05c09c8ed47e';
-  apiUrl: 'https://api.themoviedb.org/3/movie/';
+  apiKey = '6555c83772dd44d8d1be05c09c8ed47e';
+  apiUrl = 'https://api.themoviedb.org/3/movie/';
 
   getTopRatedMoviesList(): Observable<Movies> {
     return this.http.get<Movies>(this.apiUrl + 'top_rated?' + 'api_key=' + this.apiKey + '&language=en-US').pipe(
